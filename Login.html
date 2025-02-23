@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Login - Toko Kue</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: url('https://i.pinimg.com/736x/17/a1/be/17a1be1085c82b7dd55c8d3fad2e8574.jpg') no-repeat center center fixed;
+            background-size: cover;
+            
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.699);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            margin: 100px auto;
+        }
+        .button {
+            background: linear-gradient(135deg, #5af768, #7ea0ff);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: linear-gradient(135deg, #ff5e78, #ff6b92);
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username"/><br><br>
+        <input type="password" id="password" placeholder="Password"/><br><br>
+        <button class="button" onclick="login()">Masuk</button>
+        <p>Belum punya akun? <a href="#" onclick="openRegister()">Daftar</a></p>
+        <p>Lupa akun? <a href="#" onclick="deleteAccountPrompt()">Hapus Akun</a></p>
+    </div>
+
+    <div class="container" id="registerContainer" style="display: none;">
+        <h2>Registrasi</h2>
+        <input type="text" id="regUsername" placeholder="Username"/><br><br>
+        <input type="password" id="regPassword" placeholder="Password"/><br><br>
+        <button class="button" onclick="register()">Daftar</button>
+    </div>
+    
+    <script>
+        function getUsers() {
+            let users = JSON.parse(localStorage.getItem('users')) || {};
+            if (!users["admin"]) {
+                users["admin"] = "0000";
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+            return users;
+        }
+
+        function saveUsers(users) {
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+
+        function login() {
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            let users = getUsers();
+            
+            if (users[username] && users[username] === password) {
+                
+                window.location.href = "jalur.html";
+            } else {
+                alert("Username atau password salah atau belum terdaftar!");
+            }
+        }
+
+        function openRegister() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('registerContainer').style.display = 'block';
+        }
+
+        function register() {
+            let regUsername = document.getElementById('regUsername').value;
+            let regPassword = document.getElementById('regPassword').value;
+            let users = getUsers();
+
+            if (regUsername && regPassword) {
+                if (users[regUsername]) {
+                    alert("Username sudah terdaftar!");
+                } else {
+                    users[regUsername] = regPassword;
+                    saveUsers(users);
+                    alert("Registrasi Berhasil! Silakan login.");
+                    document.getElementById('registerContainer').style.display = 'none';
+                    document.getElementById('loginContainer').style.display = 'block';
+                }
+            } else {
+                alert("Mohon isi username dan password!");
+            }
+        }
+
+        function deleteAccountPrompt() {
+            let username = prompt("Masukkan username yang ingin dihapus:");
+            let password = prompt("Masukkan password akun yang ingin dihapus:");
+            if (username && password) {
+                deleteAccount(username, password);
+            }
+        }
+
+        function deleteAccount(username, password) {
+            let users = getUsers();
+            
+            if (users[username] && users[username] === password) {
+                delete users[username];
+                saveUsers(users);
+                alert("Akun berhasil dihapus!");
+            } else {
+                alert("Username atau password salah!");
+            }
+        }
+    </script>
+</body>
+</html>

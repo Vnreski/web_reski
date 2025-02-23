@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Coffee Shop</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: url('https://i.pinimg.com/736x/ff/4a/89/ff4a89578e7f28dfc401a024312d8ea9.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            background: linear-gradient(135deg, #8B4513, #D2691E);
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            padding: 20px;
+            width: 260px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 15px;
+        }
+        .button {
+            background: #8B4513;
+            background: linear-gradient(135deg, #8B4513, #A0522D);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: linear-gradient(135deg, #6B3E26, #8B5A2B);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>Coffee Shop</header>
+    <div class="container">
+        <div class="card">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.fZTinXLrBwtktn9a7sxHWQHaIC&w=474&h=474&c=7" alt="Espresso">
+            <h3>Espresso</h3>
+            <p>Rp25.000</p>
+            <button class="button">Pesan</button>
+        </div>
+        <div class="card">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.-EBzQ6CbfQ3FgBNUnr8NRQHaF6&w=378&h=378&c=7" alt="Latte">
+            <h3>Latte</h3>
+            <p>Rp30.000</p>
+            <button class="button">Pesan</button>
+        </div>
+        <div class="card">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.Pe-S01F7qQmyT8Md6QyK_wHaE8&w=316&h=316&c=7" alt="Cappuccino">
+            <h3>Cappuccino</h3>
+            <p>Rp35.000</p>
+            <button class="button">Pesan</button>
+        </div>
+        <div class="card">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.fm0uEX2ZG3N2tqFXnxftOwHaEq&w=298&h=298&c=7" alt="Mocha">
+            <h3>Mocha</h3>
+            <p>Rp40.000</p>
+            <button class="button">Pesan</button>
+        </div>
+        <div class="card">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.ksqu2Th0k_EMlSlsgcGdpQHaHa&w=474&h=474&c=7" alt="Americano">
+            <h3>Americano</h3>
+            <p>Rp28.000</p>
+            <button class="button">Pesan</button>
+        </div>
+        <div class="card">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.lL4OEbxVGLFy90dP4Yb7pgHaHa&w=474&h=474&c=7" alt="Macchiato">
+            <h3>Macchiato</h3>
+            <p>Rp38.000</p>
+            <button class="button">Pesan</button>
+        </div>
+    </div>
+</body>
+</html>

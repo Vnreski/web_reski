@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Daftar Isi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://i.pinimg.com/736x/3d/fa/6c/3dfa6c2ff717e3349ed24daae52d8c98.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 10px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: rgba(221, 247, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .link-box {
+            background: rgba(255, 255, 255, 0.5);
+            margin: 20px;
+            padding: 8px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+            transition: transform 0.2s;
+            text-align: center;
+        }
+        .link-box:hover {
+            transform: scale(1.05);
+        }
+        .link-box img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        a {
+            text-decoration: none;
+            color: #460707;
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        a:hover {
+            color: #d30b0b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="link-box">
+            <img src="https://i.pinimg.com/736x/3e/20/e2/3e20e229ac51bb25dd7f42b96b7552f6.jpg" alt="Coffe Shop">
+            <a href="coffe.html" target="_blank">Coffe Shop</a>
+        </div>
+        <div class="link-box">
+            <img src="https://img.freepik.com/premium-photo/photo-strawberry-cake-wood_839035-174827.jpg?w=360" alt="Toko">
+            <a href="kue.html" target="_blank">Toko Kue</a>
+        </div>
+        <div class="link-box">
+            <img src="https://i.pinimg.com/736x/75/1a/02/751a02d19cf7ae6fb9b200dd8fe84f7e.jpg" alt="Resto">
+            <a href="resto.html" target="_blank">Resto</a>
+        </div>
+        <div class="link-box">
+            <img src="https://i.pinimg.com/236x/2b/a1/5b/2ba15b21e397a2e9e4f92422b4518604.jpg" alt="Shopee">
+            <a href="https://shopee.co.id/" target="_blank">Shopee</a>
+        </div>
+    </div>
+</body>
+</html>
